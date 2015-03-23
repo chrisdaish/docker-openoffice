@@ -8,7 +8,7 @@ Changelog
 ```
 v1.1
 * FirstRunWizard can be skipped by passing in additional configuration files (see example below).
-I have included the registrymodifications.xcu in my [GitHub].
+I have included the registrymodifications.xcu in my [GitHub](https://github.com/chrisdaish/docker-openoffice/tree/master/configFiles).
 
 v1.0
 * User permissions now correlate between host and container. This allows OpenOffice documents to be saved back to the host system by passing in the local users uid/gid as environment variables.
