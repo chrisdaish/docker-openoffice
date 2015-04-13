@@ -20,6 +20,7 @@ Launch Command
 docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name openoffice chrisdaish/openoffice
 ```
 Additional config example:
+
 ```
 docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v $HOME/<pathToConfigFiles>/registrymodifications.xcu:/home/openoffice/.openoffice/5/user/registrymodifications.xcu:ro -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name openoffice chrisdaish/openoffice
 ```
