@@ -17,20 +17,22 @@ v1.0
 Launch Command
 ---------------
 ```
-docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name openoffice -i -t chrisdaish/openoffice
+docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name openoffice chrisdaish/openoffice
 ```
 Additional config example:
 ```
-docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v $HOME/<pathToConfigFiles>/registrymodifications.xcu:/home/openoffice/.openoffice/5/user/registrymodifications.xcu:ro -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name openoffice -i -t chrisdaish/openoffice
+docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v $HOME/<pathToConfigFiles>/registrymodifications.xcu:/home/openoffice/.openoffice/5/user/registrymodifications.xcu:ro -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name openoffice chrisdaish/openoffice
 ```
 
 FAQ
 ---
 Note: If you receive the following Gtk error:
+
 ```
 Gtk-WARNING **: cannot open display: unix:0.0
 ```
 Simply allow the docker user to communicate with your X session
+
 ```
 xhost +local:docker
 ```
