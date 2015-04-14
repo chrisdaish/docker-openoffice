@@ -6,6 +6,9 @@ Unofficial build of OpenOffice 4.1.1 running within a docker container and rende
 Changelog
 ---------
 ```
+v1.2
+* Optional environment variables 'ARGS' and 'FILE' can now be passed into the container. For example: -e ARGS='-writer' -e FILE='/home/openoffice/Documents/MyFirstDoc.odt'
+
 v1.1
 * FirstRunWizard can be skipped by passing in additional configuration files (see example below).
 I have included the registrymodifications.xcu in my [GitHub](https://github.com/chrisdaish/docker-openoffice/tree/master/configFiles).
@@ -22,7 +25,7 @@ docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v /tmp/.X11-unix:/t
 Additional config example:
 
 ```
-docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v $HOME/<pathToConfigFiles>/registrymodifications.xcu:/home/openoffice/.openoffice/5/user/registrymodifications.xcu:ro -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY --name openoffice chrisdaish/openoffice
+docker run -v $HOME/Documents:/home/openoffice/Documents:rw -v $HOME/<pathToConfigFiles>/registrymodifications.xcu:/home/openoffice/.openoffice/5/user/registrymodifications.xcu:ro -v /tmp/.X11-unix:/tmp/.X11-unix -e uid=$(id -u) -e gid=$(id -g) -e DISPLAY=unix$DISPLAY -e ARGS=-writer --name openoffice chrisdaish/openoffice
 ```
 
 FAQ
